@@ -327,10 +327,11 @@ Cvar                    | Values        | Default
 :-----------------------|:--------------|:------------
 etj_CGaz1DrawSnapZone   | 0 or 1        | 0
 
-Extends minline drawing on CGaz 1 to the end of the current snap zone.
+Extends minline drawing on CGaz 1 to cover the currently active snapzone, disabling all other CGaz 1 components.
 
 ```{note}
-This uses [`etj_CGazFov`](etjump_cvars.md/#etj_cgazfov) to determine the snapzone positions. It's meant to be used standalone, without using [`etj_drawSnapHUD`](etjump_cvars.md/#etj_drawsnaphud). If CGaz and snaphud FOVs do not match, the drawing appears misaligned compared to the snaphud, though it is still correct.
+* This uses [`etj_CGazFov`](etjump_cvars.md/#etj_cgazfov) to determine the snapzone positions. It's meant to be used standalone, without using [`etj_drawSnapHUD`](etjump_cvars.md/#etj_drawsnaphud). If CGaz and snaphud FOVs do not match, the drawing appears misaligned compared to the snaphud, though it is still correct.
+* The end of the snapzone has a very slight deviation from the actual snapzone end as CGaz FOV decreases, due to some internal inaccuracies with how CGaz and snaphud angles are calculated.
 ```
 
 ---
